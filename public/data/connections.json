@@ -1,0 +1,33 @@
+[
+  {"source": "whole person care.gov", "target": "gifts that matter"},
+  {"source": "whole person care.gov", "target": "my medi cal"},
+  {"source": "whole person care.gov", "target": "my alert"},
+  {"source": "whole person care.gov", "target": "connected casework"},
+  {"source": "whole person care.gov", "target": "forget me not"},
+  {"source": "whole person care.gov", "target": "knowledge centers"},
+
+  {"source": "gifts that matter", "target": "online account"},
+  {"source": "gifts that matter", "target": "proximity alerts"},
+  {"source": "gifts that matter", "target": "app"},
+  {"source": "gifts that matter", "target": "drop-off & pick-up locations"},
+
+  {"source": "my medi cal", "target": "medi-cal status notes"},
+  {"source": "my medi cal", "target": "appointment notes"},
+  {"source": "my medi cal", "target": "appointment/status notifications"},
+  {"source": "my medi cal", "target": "check-in status/bolo alerts"},
+
+  {"source": "my alert", "target": "1-way notification status"},
+  {"source": "my alert", "target": "QR code"},
+  {"source": "my alert", "target": "bolo alerts/check-in status"},
+
+  {"source": "connected casework", "target": "my medi-cal access"},
+  {"source": "connected casework", "target": "enrollment capabilities"},
+  {"source": "connected casework", "target": "information packages"},
+  {"source": "connected casework", "target": "cheat sheets"},
+  {"source": "connected casework", "target": "tools & technology"},
+
+  {"source": "forget me not", "target": "notification system"},
+  {"source": "forget me not", "target": "permanent record of client"},
+
+  {"source": "knowledge centers", "target": "training of SMES"}
+]

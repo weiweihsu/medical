@@ -1,0 +1,34 @@
+[
+  {"name": "whole person care.gov", "x": 10, "y": 4, "cat":"main"},
+
+  {"name": "gifts that matter", "x": -9, "y": 11, "cat":"program"},
+  {"name": "online account", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "proximity alerts", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "app", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "drop-off & pick-up locations", "x": 12, "y": 24, "cat":"initiative"},
+
+  {"name": "my medi cal", "x": 0, "y": 4, "cat":"program"},
+  {"name": "medi-cal status notes", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "appointment notes", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "appointment/status notifications", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "check-in status/bolo alerts", "x": 12, "y": 24, "cat":"initiative"},
+
+  {"name": "my alert", "x": 0, "y": 18, "cat":"program"},
+  {"name": "1-way notification status", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "QR code", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "bolo alerts/check-in status", "x": 12, "y": 24, "cat":"initiative"},
+
+  {"name": "connected casework", "x": 10, "y": 18, "cat":"program"},
+  {"name": "my medi-cal access", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "enrollment capabilities", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "information packages", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "cheat sheets", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "tools & technology", "x": 12, "y": 24, "cat":"initiative"},
+
+  {"name": "forget me not", "x": 20, "y": 12, "cat":"program"},
+  {"name": "notification system", "x": 12, "y": 24, "cat":"initiative"},
+  {"name": "permanent record of client", "x": 12, "y": 24, "cat":"initiative"},
+
+  {"name": "knowledge centers", "x": 20, "y": 4, "cat":"program"},
+  {"name": "training of SMES", "x": 12, "y": 24, "cat":"initiative"}
+]

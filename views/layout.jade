@@ -1,0 +1,34 @@
+doctype
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/css.css')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+
+
+  body
+    .topbar
+        .heading_container
+            h1 MEDI-CAL CONNECT
+            h4 <br> A network of support for homeless healthcare access
+        img.top_img(src='/images/logo_inverted.png')
+
+    <div class="info_text"> <h5> Hover over circles for more information </h5>
+    <img class="arrow" src ="/images/arrow.png"/> </div>
+    
+    img.bckgrnd_img(src='/images/logo.png')
+
+    <div id="viz">
+    <div class="hidden" id="tooltip"></div>
+    <div class="hidden" id="tooltip_main"></div>
+    
+    </div>
+    
+    
+
+    script(src="/javascripts/modal.js")
+    script(src="//d3plus.org/js/d3.js")
+    script(src="//d3plus.org/js/d3plus.js")
+    script(src="/javascripts/graph.js")
