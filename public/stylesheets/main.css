@@ -142,8 +142,12 @@ body {
 }
 
 .d3plus_label{
-    font-size:100px !important;
+    font-size:1.6em !important;
     fill:black !important;
+}
+
+line{
+    stroke:#eee;
 }
 
 #d3plus_tooltip_id_network{

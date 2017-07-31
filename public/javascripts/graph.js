@@ -400,6 +400,7 @@ var connectionsTemp = [
 // }
 
 function onHover(e) {
+    // console.log(e);
     if (e.cat=="program_init"||e.cat=="whole_init") {
         $("#tooltip").removeClass("hidden");
         $("#tooltip").html("<h3 style='text-transform:uppercase; letter-spacing:2px;'>" + e.name + "</h3>" + "<br>" + "<div id='tooltip-description'>" + e.description + "</div>")
@@ -409,14 +410,22 @@ function onHover(e) {
         $("#tooltip_main").html("<h3 style='text-transform:uppercase; letter-spacing:2px;'>" + e.name + "</h3>" + "<div id='tooltip-description'>" + e.description + "<br>" + e.details + "<br>" + "<br>" + e.access + "<br>" + "<br>" + e.benefits +"</div>")
         }
     }
-    console.log(e.name.replace(/\s/g, ''))
-    console.log($("."+e.name.replace(/\s/g, '')).children("rect"))
+    var edgeClass = e.name.hashCode();
+    var relevantEdges = d3.selectAll("."+edgeClass+" > "+"line");
+    relevantEdges.style("stroke", "rgba(0,0,0,1)");
+    console.log($("."+edgeClass))
+    // console.log(e.name.replace(/\s/g, ''))
+    // console.log($("."+e.name.replace(/\s/g, '')).children("rect"))
     $("."+e.name.replace(/\s/g, '')).children("rect").on("hover")
 }
 
 function onOut(e){
     $("#tooltip").addClass("hidden");
     $("#tooltip_main").addClass("hidden");
+    var edgeClass = e.name.hashCode();
+    var relevantEdges = d3.selectAll("."+edgeClass+" > "+"line");
+    relevantEdges.style("stroke", "#eee");
+    console.log($("."+edgeClass))
 }
 
 
@@ -433,6 +442,9 @@ var visualization = d3plus.viz()
     .labels({
         align: "end",
         padding: 37
+    })
+    .color({
+        primary:"#fff"
     })
     .class(function(d){
         if(d.x==main.programs.x){
@@ -471,40 +483,66 @@ var visualization = d3plus.viz()
             clearInterval(interval);
             $('.left').attr("white-space","nowrap");
             leftTextDoms.each(function(i, text){
-                    console.log($(text).attr("transform"));
+                    //console.log($(text).attr("transform"));
                     var leftTransform = $(text).attr("transform").split(")");
-                    console.log(leftTransform)
+                    // console.log(leftTransform)
                     var position = leftTransform[leftTransform.length-2].split(/\W+/);
-                    console.log(position)
-                    var newPositions = "translate("+(position[1]-1000)+","+position[2]+"."+position[3];
-                    console.log(newPositions)
+                    //console.log(position)
+                    var newPositions = "translate("+(position[1]-500)+","+position[2]+"."+position[3];
+                    //console.log(newPositions)
                     leftTransform[leftTransform.length-2] = newPositions;
                     leftTransform=leftTransform.join(")");
-                    console.log(leftTransform);
+                    //console.log(leftTransform);
                      $(text).attr("transform", leftTransform);
+
+                     var t = $(text);
+                     var label = t.children().map(function (){
+                         return $(this).html();
+                     }).get().join(" ");
+
+                     //console.log(label);
+                      t.children().first().html(label);
+                      t.children().not(":first").remove();
+                       t.attr("text-anchor", "end");
 
 
 
             })
             rightTextDoms.each(function(i, text){
-                    console.log($(text).attr("transform"));
                     var rightTransform = $(text).attr("transform").split(")");
-                    console.log(rightTransform)
+                    //console.log(rightTransform)
                     var position = rightTransform[rightTransform.length-2].split(/\W+/);
-                    console.log(position)
-                    var newPositions = "translate("+(position[1]+1000)+","+position[2]+"."+position[3];
-                    console.log(newPositions)
+                    //console.log(position)
+                    var newPositions = "translate("+(position[1]+500)+","+position[2]+"."+position[3];
+                    //console.log(newPositions)
                     rightTransform[rightTransform.length-2] = newPositions;
                     rightTransform=rightTransform.join(")");
-                    console.log(rightTransform);
+                    //console.log(rightTransform);
                      $(text).attr("transform", rightTransform);
 
+                     var t = $(text);
+                     var label = t.children().map(function (){
+                         return $(this).html();
+                     }).get().join(" ");
 
+                    // console.log(label);
+                      t.children().first().html(label);
+                      t.children().not(":first").remove();
+                       t.attr("text-anchor", "start");
+            })
+            leftTextDoms.each(function(){
+                this.style.setProperty("font-size", "15.6em", "important");
             })
 
-            console.log(
-                leftTextDoms.attr("transform"),
-                rightTextDoms.attr("transform"));
+            rightTextDoms.each(function(){
+                this.style.setProperty("font-size", "15.6em", "important");
+            })
+
+
+            //
+            // console.log(
+            //     leftTextDoms.attr("transform"),
+            //     rightTextDoms.attr("transform"));
         }
 
     }, 200)
