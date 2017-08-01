@@ -9,6 +9,47 @@
     font-stretch: normal;
 }
 
+@font-face {
+  font-family: 'Gotham-Black';
+  src: url('stylesheets/fonts/Gotham OpenType/Gotham-Black.otf');
+}
+
+@font-face {
+  font-family: 'Gotham-Bold';
+  src: url('stylesheets/fonts/Gotham OpenType/Gotham-Bold.otf');
+}
+
+
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('stylesheets/fonts/Gotham OpenType/Gotham-Medium.otf');
+}
+
+
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('stylesheets/fonts/Gotham OpenType/Gotham-Medium.otf');
+}
+
+/*
+The typeface Bebas has been chosen to be the title 1 font for print and web. Main headlines, key messages, promo blocks, and buttons can be designed using this typeface. We don ́t recommend using the light version..
+*/
+@font-face {
+  font-family: 'Bebas-Neue-Bold';
+  src: url('stylesheets/fonts/bebas/BebasNeue Bold.otf');
+}
+
+@font-face {
+  font-family: 'Bebas-Neue-Regular';
+  src: url('stylesheets/fonts/bebas/BebasNeue Regular.otf');
+}
+
+
+@font-face {
+  font-family: 'Bebas-Neue-Book';
+  src: url('stylesheets/fonts/bebas/BebasNeue Book.otf');
+}
+
 .topbar{
     width: 99%;
     height: 100px;
