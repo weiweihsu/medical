@@ -3,7 +3,7 @@
 var main = {
     programs: {"name": "programs", "x": 4, "y": 4, "size": 1.4, "cat":"whole_main","description": "", "details":"", "access":"", "benefits":""},
 
-    wholepersoncare: {"name": "wholepersoncare.gov", "x": 224, "y": 4, "size": 1.4, "cat":"whole_main","description": "A one-stop digital hub for clients and service workers that hosts easy to consume content on the front end that is supported by MEDS data on the back end.  This website will also host client profiles/vital ID statistics that will follow them through the system to aid in maintaining consistent care and access to city services.", "details":"", "access":"wpc.com, wpc.com app, WPC Kiosk, toll free number (user will need to set up a PIN for access to PHI), and request by mail", "benefits":"Allows users to add information about themselves in one place. Keeps users informed of the services they're currently enrolled in. Provides a one-stop location for information online that is specifically written for this audience. Keeps people aware of upcoming appointments with a couple day's notice as a reminder. Houses all information regarding balances and all incentives providers. Provides information about frequently used, common service providers and locations in one place."}
+    wholepersoncare: {"name": "wholepersoncare.gov", "x": 150, "y": 4, "size": 1.4, "cat":"whole","description": "A one-stop digital hub for clients and service workers that hosts easy to consume content on the front end that is supported by MEDS data on the back end.  This website will also host client profiles/vital ID statistics that will follow them through the system to aid in maintaining consistent care and access to city services.", "details":"", "access":"wpc.com, wpc.com app, WPC Kiosk, toll free number (user will need to set up a PIN for access to PHI), and request by mail", "benefits":"Allows users to add information about themselves in one place. Keeps users informed of the services they're currently enrolled in. Provides a one-stop location for information online that is specifically written for this audience. Keeps people aware of upcoming appointments with a couple day's notice as a reminder. Houses all information regarding balances and all incentives providers. Provides information about frequently used, common service providers and locations in one place."}
 }
 
 var backInt = 1;
@@ -416,7 +416,7 @@ function onHover(e) {
     var relevantEdges = d3.selectAll("."+edgeClass+" > "+"line");
     relevantEdges.style("stroke", "rgb(0,0,0)");
     relevantEdges.style("stroke-opacity", 1);
-    console.log($("."+edgeClass))
+    // console.log($("."+edgeClass))
     // console.log(e.name.replace(/\s/g, ''))
     // console.log($("."+e.name.replace(/\s/g, '')).children("rect"))
     $("."+e.name.replace(/\s/g, '')).children("rect").on("hover")
@@ -430,6 +430,11 @@ function onOut(e){
     relevantEdges.style("stroke-opacity", 0);
     console.log($("."+edgeClass))
 }
+
+function noEvent(){
+    return false;
+}
+
 
 
 // console.log(positions)
@@ -458,9 +463,10 @@ var visualization = d3plus.viz()
     })
     .shape("circle")
     .mouse({
-        // click: onClick,
+        click: noEvent,
         over: onHover,
-        out: onOut
+        out: onOut,
+        move: noEvent
     })
     .text(function(d) {
         if (d.cat == "whole_init", "program_init") {
@@ -481,6 +487,7 @@ var visualization = d3plus.viz()
 
         //makes edges invisible
         d3.selectAll("line").style("stroke-opacity",0)
+        setTimeout(function(){$("rect").off("click")}, 1000)
 
         //FUGH THIS IS UGLY
         var leftTextDoms = $(".left").children("text");
@@ -536,13 +543,16 @@ var visualization = d3plus.viz()
                       t.children().not(":first").remove();
                        t.attr("text-anchor", "start");
             })
-            leftTextDoms.each(function(){
-                this.style.setProperty("font-size", "15.6em", "important");
-            })
-
-            rightTextDoms.each(function(){
-                this.style.setProperty("font-size", "15.6em", "important");
-            })
+            function setFontSize(i,d){
+                console.log($(this).parent().hasClass("programs"));
+                if($(this).parent().hasClass("programs")||$(this).parent().hasClass("whole")){
+                    this.style.setProperty("font-size", "25.6em", "important");
+                }else{
+                    this.style.setProperty("font-size", "15.6em", "important");
+                }
+            }
+            leftTextDoms.each(setFontSize)
+            rightTextDoms.each(setFontSize)
 
 
             //

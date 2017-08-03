@@ -125,6 +125,8 @@ body {
 
 }
 
+
+
 .bckgrnd_img{
     z-index:800;
     padding: 45px 20px 20px 440px;
@@ -154,6 +156,7 @@ body {
 .arrow{
     z-index: 1200;
     position: relative;
+    display:none;
     margin: 0% 20%;
     x: 50;
     y: 20;
@@ -162,6 +165,7 @@ body {
 
 .info_text{
     width: 100%;
+    padding:1% 0;
 }
 
 .hidden{
@@ -196,9 +200,11 @@ line{
     display: none;
 }
 
-.whole_main>text, .program_main>text{
+.whole>text, .whole_main>text, .program_main>text{
     font-weight:bold;
 }
+
+
 .temp{
     display:none;
 }
@@ -208,6 +214,11 @@ line{
     justify-content:center;
     align-items:center;
 }
+@keyframes fade-in{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
 
 #tooltip {
     background-color: #E4E7EF;
@@ -224,11 +235,15 @@ line{
     -webkit-box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
     -moz-box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
     box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
+    animation-name: fade-in;
+    animation-duration: .5s;
+
 }
 
 #tooltip::first-letter{
     text-transform: capitalize;
 }
+
 
 #tooltip_main {
     background-color: #E4E7EF;
@@ -245,4 +260,9 @@ line{
     -webkit-box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
     -moz-box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
     box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
+
+    animation-name: fade-in;
+    animation-duration: .5s;
 }
+
+

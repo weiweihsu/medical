@@ -22259,7 +22259,7 @@ module.exports = function(vars) {
     if (vars.types[vars.type.value].zoom && vars.zoom.value) {
       vars.g.zoom
         .datum(vars)
-        .call(vars.zoom.behavior.on("zoom",mouse))
+        // .call(vars.zoom.behavior.on("zoom",mouse))
       if (!vars.zoom.scroll.value) {
         vars.g.zoom
           .on("mousewheel.zoom",null)
@@ -24605,7 +24605,7 @@ module.exports = function(vars) {
         //   console.log(d);
           var sourceClass = d.source.name.replace(" ", "-");
           var targetClass = d.target.name.replace(" ", "-");
-          // console.log(sourceClass, targetClass);
+          console.log(sourceClass, targetClass);
         //   console.log(this);
           var startClass = d3.select(this).attr("class") || ""
           var classes =  startClass+ " " + sourceClass + " "+ targetClass;
@@ -30885,7 +30885,7 @@ module.exports = {
 },{}],306:[function(require,module,exports){
 module.exports = {
   "accepted"   : [ Boolean ],
-  "behavior"   : d3.behavior.zoom().scaleExtent([ 1 , 1 ]).duration(0),
+  "behavior"   : d3.behavior.zoom().scaleExtent([ 1 , 1 ]).duration(5),
   "click"      : {
     "accepted" : [ Boolean ],
     "value"    : true
