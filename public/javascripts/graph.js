@@ -1,9 +1,9 @@
 // create list of node positions
 
 var main = {
-    programs: {"name": "programs", "x": 4, "y": 4, "size": 1.4, "cat":"whole_main","description": "", "details":"", "access":"", "benefits":""},
+    programs: {"name": "programs", "x": 4, "y": 4, "size": 1.4, "cat":"whole_main","description": "Fjord has proposed six programs intended to address pain points that we have observed over the course of our work with the City of San Francisco. Many of these six programs link to one another as well as the wpc.gov website.", "details":"", "access":"", "benefits":""},
 
-    wholepersoncare: {"name": "wholepersoncare.gov", "x": 150, "y": 4, "size": 1.4, "cat":"whole","description": "A one-stop digital hub for clients and service workers that hosts easy to consume content on the front end that is supported by MEDS data on the back end.  This website will also host client profiles/vital ID statistics that will follow them through the system to aid in maintaining consistent care and access to city services.", "details":"", "access":"wpc.com, wpc.com app, WPC Kiosk, toll free number (user will need to set up a PIN for access to PHI), and request by mail", "benefits":"Allows users to add information about themselves in one place. Keeps users informed of the services they're currently enrolled in. Provides a one-stop location for information online that is specifically written for this audience. Keeps people aware of upcoming appointments with a couple day's notice as a reminder. Houses all information regarding balances and all incentives providers. Provides information about frequently used, common service providers and locations in one place."}
+    wholepersoncare: {"name": "wholepersoncare.gov", "x": 150, "y": 4, "size": 1.4, "cat":"whole", "description": "", "details":"", "access":"","benefits":""}
 }
 
 var backInt = 1;
@@ -407,7 +407,7 @@ function onHover(e) {
         $("#tooltip").removeClass("hidden");
         $("#tooltip").html("<h3 style='text-transform:uppercase; letter-spacing:2px;'>" + e.name + "</h3>" + "<br>" + "<div id='tooltip-description'>" + e.description + "</div>")
     }else{
-        if (e.cat=="program_main"||e.cat=="whole_main") {
+        if (e.cat=="program_main"||e.cat=="whole_main"||e.cat=="whole") {
         $("#tooltip_main").removeClass("hidden");
         $("#tooltip_main").html("<h3 style='text-transform:uppercase; letter-spacing:2px;'>" + e.name + "</h3>" + "<div id='tooltip-description'>" + e.description + "<br>" + e.details + "<br>" + "<br>" + e.access + "<br>" + "<br>" + e.benefits +"</div>")
         }
@@ -480,7 +480,7 @@ var visualization = d3plus.viz()
     })
     .id("name")
     .draw()
-    
+
 
     var interval = setInterval(function(){
 
