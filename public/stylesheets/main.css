@@ -229,12 +229,13 @@ line{
     x:0;
     y:20;
     top:200px;
+    opacity: 0.8;
     z-index: 900;
     padding: 35px;
     padding-top: 20px;
-    -webkit-box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
-    -moz-box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
-    box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
+    -webkit-box-shadow: 11px 11px 70px -16px rgba(168,166,168, 0.8);
+    -moz-box-shadow: 11px 11px 70px -16px rgba(168,166,168, 0.8);
+    box-shadow: 11px 11px 70px -16px rgba(168,166,168, 0.8);
     animation-name: fade-in;
     animation-duration: .5s;
 
@@ -254,15 +255,14 @@ line{
     x:0;
     y:20;
     top:200px;
+    opacity: 0.8;
     z-index: 900;
     padding: 35px;
     padding-top: 20px;
-    -webkit-box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
-    -moz-box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
-    box-shadow: 11px 11px 70px -16px rgba(82,78,82,1);
+    -webkit-box-shadow: 11px 11px 70px -16px rgba(168,166,168, 0.8);
+    -moz-box-shadow: 11px 11px 70px -16px rgba(168,166,168, 0.8);
+    box-shadow: 11px 11px 70px -16px rgba(168,166,168, 0.8);
 
     animation-name: fade-in;
     animation-duration: .5s;
 }
-
-
