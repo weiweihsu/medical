@@ -24551,7 +24551,7 @@ module.exports = function(vars) {
         //   console.log(d);
           var sourceClass = d.source.name.hashCode();
           var targetClass = d.target.name.hashCode();
-          console.log(sourceClass, targetClass);
+          // console.log(sourceClass, targetClass);
         //   console.log(this);
           var startClass = d3.select(this).attr("class") || ""
           var sameSide = d.source.x == d.target.x ? "same" : "notSame";
@@ -24605,7 +24605,7 @@ module.exports = function(vars) {
         //   console.log(d);
           var sourceClass = d.source.name.replace(" ", "-");
           var targetClass = d.target.name.replace(" ", "-");
-          console.log(sourceClass, targetClass);
+          // console.log(sourceClass, targetClass);
         //   console.log(this);
           var startClass = d3.select(this).attr("class") || ""
           var classes =  startClass+ " " + sourceClass + " "+ targetClass;

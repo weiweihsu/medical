@@ -188,11 +188,19 @@ body {
 }
 
 line{
-    stroke:#eee;
+    stroke:rgba(0,0,0,0);
 }
+
 
 #d3plus_tooltip_id_network{
     display: none;
+}
+
+.whole_main>text, .program_main>text{
+    font-weight:bold;
+}
+.temp{
+    display:none;
 }
 
 #viz {
