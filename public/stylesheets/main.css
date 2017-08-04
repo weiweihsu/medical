@@ -1,5 +1,5 @@
 html{
-    zoom:80%;
+
 }
 
 @font-face {
@@ -191,7 +191,7 @@ body {
 }
 
 .d3plus_label{
-    font-size:1.6em !important;
+    font-size:.5em !important;
     fill:black !important;
 }
 

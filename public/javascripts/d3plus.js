@@ -20080,6 +20080,7 @@ module.exports = function(vars) {
   }
   vars.container.value.attr("text-anchor", anchor).attr("font-size", fontSize + "px").style("font-size", fontSize + "px").attr("x", vars.container.x).attr("y", vars.container.y);
   truncate = function() {
+      console.log("truncate")
     textBox.remove();
     if (reverse) {
       line++;
@@ -20092,7 +20093,7 @@ module.exports = function(vars) {
       words = textBox.text().match(/[^\s-]+-?/g);
       return ellipsis();
     }
-  };
+};
   lineWidth = function() {
     var b;
     if (vars.shape.value === "circle") {
