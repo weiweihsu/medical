@@ -428,7 +428,7 @@ function onOut(e){
     var edgeClass = e.name.hashCode();
     var relevantEdges = d3.selectAll("."+edgeClass+" > "+"line");
     relevantEdges.style("stroke-opacity", 0);
-    console.log($("."+edgeClass))
+    // console.log($("."+edgeClass))
 }
 
 function noEvent(){
@@ -544,7 +544,7 @@ var visualization = d3plus.viz()
                        t.attr("text-anchor", "start");
             })
             function setFontSize(i,d){
-                console.log($(this).parent().hasClass("programs"));
+                // console.log($(this).parent().hasClass("programs"));
                 if($(this).parent().hasClass("programs")||$(this).parent().hasClass("whole")){
                     this.style.setProperty("font-size", "25.6em", "important");
                 }else{

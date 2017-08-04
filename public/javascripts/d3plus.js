@@ -20037,6 +20037,7 @@ var rtl;
 rtl = require("../../client/rtl.coffee");
 
 module.exports = function(vars) {
+
   var anchor, dy, ellipsis, fontSize, h, height, line, lineWidth, lines, mirror, newLine, placeWord, progress, reverse, rmod, rotate, rx, ry, space, start, textBox, translate, truncate, valign, width, words, wrap, x, xOffset, y, yOffset;
   newLine = function(first) {
     var tspan;
@@ -20080,7 +20081,7 @@ module.exports = function(vars) {
   }
   vars.container.value.attr("text-anchor", anchor).attr("font-size", fontSize + "px").style("font-size", fontSize + "px").attr("x", vars.container.x).attr("y", vars.container.y);
   truncate = function() {
-      console.log("truncate")
+    console.log("truncate")
     textBox.remove();
     if (reverse) {
       line++;
@@ -20209,7 +20210,7 @@ module.exports = function(vars) {
       }
     }
     if (line * dy > height) {
-      truncate();
+      // truncate();
     }
     return lines = Math.abs(line - start) + 1;
   };
@@ -22676,7 +22677,6 @@ module.exports = function(vars, selection, enter, exit) {
           });
 
         }
-
         if (lr && lr[0]) {
 
           var label = {
@@ -24549,11 +24549,8 @@ module.exports = function(vars) {
 
     lines.enter().append("g")
       .attr("class",function(d){
-        //   console.log(d);
           var sourceClass = d.source.name.hashCode();
           var targetClass = d.target.name.hashCode();
-          // console.log(sourceClass, targetClass);
-        //   console.log(this);
           var startClass = d3.select(this).attr("class") || ""
           var sameSide = d.source.x == d.target.x ? "same" : "notSame";
           var classes =  startClass+ " " + sourceClass + " "+ targetClass + " " + sameSide;
@@ -24603,11 +24600,8 @@ module.exports = function(vars) {
 
     lines.enter().append("g")
       .attr("class",function(d){
-        //   console.log(d);
           var sourceClass = d.source.name.replace(" ", "-");
           var targetClass = d.target.name.replace(" ", "-");
-          console.log(sourceClass, targetClass);
-        //   console.log(this);
           var startClass = d3.select(this).attr("class") || ""
           var classes =  startClass+ " " + sourceClass + " "+ targetClass;
           return "d3plus_edge_line "+classes;
@@ -24939,7 +24933,7 @@ module.exports = function( vars , group ) {
         // if (vars.draw.timing) return 1;
         var size = parseFloat(d3.select(this).attr("font-size"),10);
         d.visible = size * (vars.zoom.scale/scale[1]) >= 2;
-        return d.visible ? 1 : 0;
+        return 1;
       });
 
   };
@@ -24948,7 +24942,6 @@ module.exports = function( vars , group ) {
   // Label Exiting
   //----------------------------------------------------------------------------
   var remove = function(text) {
-
     if (vars.draw.timing) {
       text
         .transition().duration(vars.draw.timing)
@@ -25003,7 +24996,6 @@ module.exports = function( vars , group ) {
 
           var y = t.y - t.h*scale[1]/2 + t.padding/2;
           if (salign === "bottom") y += (t.h * scale[1])/2;
-
           textWrap()
             .align("center")
             .container(d3.select(this))
@@ -25027,7 +25019,7 @@ module.exports = function( vars , group ) {
           }
 
           var yOffset = vars.labels.valign.value === "bottom" ? t.share : 0;
-
+          // console.log(t.names)
           textWrap()
             .align(t.anchor || vars.labels.align.value)
             .container( d3.select(this) )
@@ -25072,7 +25064,6 @@ module.exports = function( vars , group ) {
     }
 
     selection.each(function(d){
-
       var disabled = d.d3plus && "label" in d.d3plus && !d.d3plus.label,
           label = d.d3plus_label || null,
           share = d.d3plus_share,
@@ -25084,6 +25075,9 @@ module.exports = function( vars , group ) {
           group = label && "group" in label ? label.group : d3.select(this),
           share_size = 0,
           fill = vars.types[vars.type.value].fill;
+
+      // console.log(names)
+      // console.log(label)
 
       if (!(names instanceof Array)) names = [names];
 
@@ -25097,9 +25091,11 @@ module.exports = function( vars , group ) {
               temp   = segments(vars, d, "temp"),
               total  = segments(vars, d, "total"),
               background = (!temp && !active) || (active >= total) || (!active && temp >= total);
+
         }
 
       }
+
 
       if (!disabled && ((label && label.force) || background || !fill)) {
 
@@ -25182,9 +25178,10 @@ module.exports = function( vars , group ) {
 
           label.share = share_size;
           label.parent = d;
-
+          // console.log(label)
           var text = group.selectAll("text#d3plus_label_"+d.d3plus.id)
             .data([label],function(t){
+              // console.log(t)
               if (!t) return false;
               return t.w+"_"+t.h+"_"+t.x+"_"+t.y+"_"+t.names.join("_");
             }), fontSize = label.resize ? undefined :
@@ -27681,7 +27678,7 @@ module.exports = function(vars) {
                       .attr("x", 0)
                       .attr("y", 0)
                       .each(function(t){
-
+                        console.log(names)
                         textWrap()
                           .align("middle")
                           .container( d3.select(this) )
@@ -27938,6 +27935,7 @@ module.exports = function(vars) {
         .style("text-anchor",vars.legend.font.align)
         .attr("fill",vars.legend.font.color)
         .text(function(d){
+          console.log(vars.format.value(values[d], {"key": vars.color.value, "vars": vars}));
           return vars.format.value(values[d], {"key": vars.color.value, "vars": vars});
         })
         .attr("y",function(d){
