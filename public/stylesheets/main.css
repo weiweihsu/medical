@@ -270,3 +270,24 @@ line{
     animation-name: fade-in;
     animation-duration: .5s;
 }
+
+#tooltip_banner {
+    background-color: #E4E7EF;
+    border-radius: 25px;
+    width: 500px;
+
+    position: absolute;
+    x:0;
+    y:20;
+    top:200px;
+    opacity: 0.8;
+    z-index: 900;
+    padding: 35px;
+    padding-top: 20px;
+    -webkit-box-shadow: 11px 11px 70px -16px rgba(168,166,168, 0.8);
+    -moz-box-shadow: 11px 11px 70px -16px rgba(168,166,168, 0.8);
+    box-shadow: 11px 11px 70px -16px rgba(168,166,168, 0.8);
+
+    animation-name: fade-in;
+    animation-duration: .5s;
+}

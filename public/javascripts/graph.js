@@ -3,7 +3,7 @@
 var main = {
     programs: {"name": "programs", "x": 4, "y": 4, "size": 1.4, "cat":"whole_main","description": "Fjord has proposed six programs intended to address pain points that we have observed over the course of our work with the City of San Francisco. Many of these six programs link to one another as well as the wpc.gov website.", "details":"", "access":"", "benefits":""},
 
-    wholepersoncare: {"name": "wholepersoncare.gov", "x": 150, "y": 4, "size": 1.4, "cat":"whole", "description": "", "details":"", "access":"","benefits":""}
+    wholepersoncare: {"name": "wholepersoncare.gov", "x": 150, "y": 4, "size": 1.4, "cat":"whole", "description": "A one-stop digital hub for clients and service workers that hosts easy to consume content on the front end that is supported by MEDS data on the back end.  This website will also host client profiles/vital ID statistics that will follow them through the system to aid in maintaining consistent care and access to city services.", "details":"", "access":"","benefits":""}
 }
 
 var backInt = 1;
@@ -232,19 +232,19 @@ var program_init = {
 
     //my cloud wallet
     birthcertificate: {"name": "birth certificate", "x": main.wholepersoncare.x, "y": backend.mycloudwallet.y + randInt, "size": 1.1,"cat":"whole_init",
-    "description": ""},
+    "description": "Key documents for identifcation."},
 
     californiaid: {"name": "california ID", "x": main.wholepersoncare.x, "y": backend.mycloudwallet.y + randInt, "size": 1.1,"cat":"whole_init",
-    "description": ""},
+    "description": "Key documents for identifcation."},
 
     ssn: {"name": "social security card", "x": main.wholepersoncare.x, "y": backend.mycloudwallet.y + randInt, "size": 1.1,"cat":"whole_init",
-    "description": ""},
+    "description": "Key documents for identifcation."},
 
     esignature: {"name": "electronic signature", "x": main.wholepersoncare.x, "y": backend.mycloudwallet.y + randInt, "size": 1.1,"cat":"whole_init",
-    "description": ""},
+    "description": "Key documents for identifcation."},
 
     biometricid: {"name": "biometric ID", "x": main.wholepersoncare.x, "y": backend.mycloudwallet.y + randInt, "size": 1.1,"cat":"whole_init",
-    "description": ""},
+    "description": "Key documents for identifcation."},
 
     temp:{"name": "temp", "x": main.wholepersoncare.x, "y": backend.mycloudwallet.y + randInt, "size": 1,"cat":"temp",
     "description": ""}
@@ -436,6 +436,13 @@ function noEvent(){
 }
 
 
+$(".topbar").hover(function(){
+    $("#tooltip_main").removeClass("hidden");
+    $("#tooltip_main").html("<div id='tooltip-description'>" + "<p>" + "In the summer of 2017, Fjord began a collaboration with the City of San Francisco’s Department of Public Health. Our project was to understand how the homeless population enrolls in and maintains Medi-Cal. The goal was to minimize gaps in Medi-Cal coverage for the homeless." + "<br>" + "<br>" + "Over an eight-week period, Fjord conducted a research program that included stakeholder and front-line provider interviews, primary research regarding health care access for the homeless in other cities, and an interdepartmental workshop called a Rumble. This research program culminated in a series of proposed concepts by the Fjord team to augment Medi-Cal access and retention and complement the Whole Person Care initiative." + "<br>" + "<br>" + "This site describes the programs and interdependencies that Fjord has proposed to augment the Medi-Cal program." + "</p>" + "</div>");
+},
+    function(){
+            $("#tooltip_main").addClass("hidden");
+        })
 
 // console.log(positions)
 // instantiate d3plus
